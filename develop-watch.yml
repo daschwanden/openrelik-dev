@@ -1,0 +1,14 @@
+  openrelik-worker-template:
+      build: ../openrelik-worker-template
+      container_name: openrelik-worker-template
+      restart: always
+      environment:
+        - REDIS_URL=redis://openrelik-redis:6379
+      volumes:
+        - ./data:/usr/share/openrelik/data
+      command: "celery --app=src.app worker --task-events --concurrency=4 --loglevel=INFO -Q openrelik-worker-template"
+      develop:
+        watch:
+          - action: sync+restart
+            path: ../openrelik-worker-template/src
+            target: /openrelik/src
