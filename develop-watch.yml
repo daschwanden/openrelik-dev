@@ -6,6 +6,7 @@
         - REDIS_URL=redis://openrelik-redis:6379
       volumes:
         - ./data:/usr/share/openrelik/data
+        - /home/node/.config/gcloud:/root/.config/gcloud
       command: "celery --app=src.app worker --task-events --concurrency=4 --loglevel=INFO -Q openrelik-worker-template"
       develop:
         watch:

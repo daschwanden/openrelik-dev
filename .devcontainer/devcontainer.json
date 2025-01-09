@@ -7,6 +7,13 @@
 		8711,
 		8710
 	],
+	"mounts": [
+		{
+			"type": "bind",
+			"source": "${localEnv:HOME}/.config/gcloud",
+			"target": "/home/node/.config/gcloud"
+		}
+	],
 	"postStartCommand": "bash poststart.sh",
 	"shutdownAction": "stopContainer"
 }
