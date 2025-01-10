@@ -25,6 +25,8 @@ git clone https://github.com/daschwanden/openrelik-dev.git
 cd openrelik-dev
 ```
 
+![Clone the repo](./images/clone-the-repo.png "Clone the repo")
+
 ### 2. Run the Dev Container
 
 In your workspace press ```F1```, then run the ```Dev Containers: Open Folder in Container...```
@@ -36,6 +38,8 @@ This will start up new workspace running in a ```docker-in-docker``` container u
 During the startup sequence a [Docker Compose](https://docs.docker.com/compose/) environment with OpenRelik installed will automatically be created for you.
 For your convenience it automates all the steps outlined in the OpenRelik [Getting Started](https://openrelik.org/docs/getting-started/) guide.
 
+![Open in dev container](./images/open-in-container.png "Open in dev container")
+
 ### 3. Access OpenRelik
 
 As soon as Docker Compose has started all the OpenRelik containers you will see the login parameters displayed in the terminal.
@@ -46,6 +50,10 @@ Point your browser to [http://localhost:8711](http://localhost:8711) and use the
 
 > **Note**: Make sure you use ```http://localhost:8711``` as ```127.0.0.1``` will not work due to CORS restrictions.
 
+![Access OpenRelik](./images/access-openrelik.png "Access OpenRelik")
+
+![Login](./images/login.png "Login")
+
 ### 4. Create new OpenRelik Worker
 
 **Last but not least** we want to add a new OpenRelik Worker.
@@ -55,6 +63,8 @@ In a new ```Terminal``` run the following command:
 ```console
 ./newWorker.sh <REPLACE_WITH_YOUR_WORKER_NAME>
 ```
+
+![New Worker](./images/new-worker.png "New Worker")
 
 This will do 2 things:
 1. Scaffold a fully functional OpenRelik Worker (called ```openrelik-worker-<REPLACE_WITH_YOUR_WORKER_NAME>```) based on the [openrelik-worker-template](https://github.com/openrelik/openrelik-worker-template) repo.
@@ -67,6 +77,8 @@ cd openrelik
 docker compose watch
 ```
 
-You can now use your Workspace to develop your new OpenRelik worker.
+You can now use your Workspace to live code on your new OpenRelik worker.
 
 As soon as you save your work on any of the files in the ```openrelik-worker-<REPLACE_WITH_YOUR_WORKER_NAME>``` folder the updates will be synchronised into your new OpenRelik Worker container.
+
+![Live code](./images/live-code.png "Live code")
