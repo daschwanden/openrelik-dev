@@ -1,3 +1,4 @@
+
   openrelik-worker-template:
       build: ../openrelik-worker-template
       container_name: openrelik-worker-template
@@ -6,7 +7,7 @@
         - REDIS_URL=redis://openrelik-redis:6379
       volumes:
         - ./data:/usr/share/openrelik/data
-        - /home/${USER}/.config/gcloud:/root/.config/gcloud
+        - /${HOME}/.config/gcloud:/root/.config/gcloud
       command: "celery --app=src.app worker --task-events --concurrency=4 --loglevel=INFO -Q openrelik-worker-template"
       develop:
         watch:
